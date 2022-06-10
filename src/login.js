@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './login.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
-const clientId = "311288814553-nc5jtg2i3omfcql9de91oefbn90o80qi.apps.googleusercontent.com";
+const clientId = "YOUR_ID";
 
 function Login() {
 
