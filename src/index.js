@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Route, Link, BrowserRouter,Routes } from 'react-router-dom';
+import { Route, BrowserRouter,Routes  } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Login from './login';
 import reportWebVitals from './reportWebVitals';
 
-const routs = (
+{/*const routs = (
   < BrowserRouter >
      <div>
        <Routes>
@@ -15,8 +15,8 @@ const routs = (
         </Routes>
      </div>
   </ BrowserRouter >
-);
-
+);*/}
+let showSearchPage=false;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -24,7 +24,7 @@ root.render(
      <div>
        <Routes>
         <Route exact path="/" element={ <Login/> } />
-        <Route path="/search" element={ <App/> } />
+        <Route path="/search" element={ <App showSearchPage={showSearchPage}/> } />
         </Routes>
      </div>
   </ BrowserRouter >

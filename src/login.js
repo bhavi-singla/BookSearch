@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './login.css';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { GoogleLogin} from 'react-google-login';
 
-const clientId = "YOUR_ID";
+const clientId = "653650831518-ig1dm8llb40asrq6ik6u32alhdsjlhf9.apps.googleusercontent.com";
 
 function Login() {
 
-    const [showloginButton, setShowloginButton] = useState(true);
+    {/*const [showloginButton, setShowloginButton] = useState(true);
     const [showlogoutButton, setShowlogoutButton] = useState(false);
+*/}
     const onLoginSuccess = (res) => {
         console.log('Login Success:', res.profileObj);
-        setShowloginButton(false);
-        setShowlogoutButton(true);
+        window.location = "http://localhost:8000/search";
+
     };
 
     const onLoginFailure = (res) => {
         console.log('Login Failed:', res);
     };
 
-    const onSignoutSuccess = () => {
+    {/*const onSignoutSuccess = () => {
         alert("You have been logged out successfully");
         console.clear();
         setShowloginButton(true);
         setShowlogoutButton(false);
     };
-    {/*function onSignIn(googleUser) {
+    function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
@@ -34,13 +35,21 @@ function Login() {
     return (
         <>
         <div className='g-block'>
-            { showloginButton ?
+        <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Sign In"
+                    onSuccess={onLoginSuccess}
+                    onFailure={onLoginFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                /> 
+            {/*{ showloginButton ?
                 <GoogleLogin
                     clientId={clientId}
                     buttonText="Sign In"
                     onSuccess={onLoginSuccess}
                     onFailure={onLoginFailure}
-                    
+                    cookiePolicy={'single_host_origin'}
                     isSignedIn={true}
                 /> : null}
 
@@ -51,7 +60,7 @@ function Login() {
                     onLogoutSuccess={onSignoutSuccess}
                 >
                 </GoogleLogout> : null
-            }
+            }*/}
         </div>
         {//<div className="g-signin2" data-onsuccess={onSignIn}></div>
         }

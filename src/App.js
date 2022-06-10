@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './Components/Main';
 import './Components/style.css';
-function App() {
+function App({showSearchPage}) {
   return (
     <div className="App">
-      <Main/>
+      {showSearchPage}:<Main/>?{window.location="http://localhost:8000"};
     </div>
   );
 }

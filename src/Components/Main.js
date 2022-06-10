@@ -1,6 +1,10 @@
 import react ,{useState}from "react";
 import Card from "./Card";
 import axios from "axios";
+
+import { GoogleLogout } from 'react-google-login';
+
+const clientId = "653650831518-ig1dm8llb40asrq6ik6u32alhdsjlhf9.apps.googleusercontent.com";
 const Main=()=>{
     const [search,setSearch]=useState("");
     const [bookData,setData]=useState([]);
@@ -12,8 +16,19 @@ const Main=()=>{
             .catch(err=>console.log(err))
         }
     }
+    const onSignoutSuccess = () => {
+        alert("You have been logged out successfully");
+        console.clear();
+        window.location="http://localhost:8000";
+    };
     return(
         <>
+            <GoogleLogout
+                    clientId={clientId}
+                    buttonText="Sign Out"
+                    onLogoutSuccess={onSignoutSuccess}
+                >
+            </GoogleLogout>
             <div className="header">
                 <div className="row1">
                     <h1>A room without books is like<br/> a body without a soul.</h1>
