@@ -5,7 +5,7 @@ const Card = ({ book }) => {
 
     const [show,setShow]=useState(false);
     const [bookItem,setItem]=useState();
-    console.log(book)
+    //console.log(book)
     return (
         <>
             {

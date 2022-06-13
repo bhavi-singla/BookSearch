@@ -186,3 +186,8 @@ html{
     text-align: justify;
     font-size: 13px;
 }
+.bold_font{
+    color: white;
+    font-size: larger;
+    font-style: italic;
+}

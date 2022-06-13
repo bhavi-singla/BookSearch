@@ -2,18 +2,14 @@ import React from 'react';
 import './login.css';
 import { GoogleLogin} from 'react-google-login';
 
-const clientId = "YOUR_ID";
+const clientId = "653650831518-ig1dm8llb40asrq6ik6u32alhdsjlhf9.apps.googleusercontent.com";
 
-function Login() {
+function Login({onLoginSuccessfully}) {
 
     {/*const [showloginButton, setShowloginButton] = useState(true);
     const [showlogoutButton, setShowlogoutButton] = useState(false);
 */}
-    const onLoginSuccess = (res) => {
-        console.log('Login Success:', res.profileObj);
-        window.location = "http://localhost:8000/search";
-
-    };
+    
 
     const onLoginFailure = (res) => {
         console.log('Login Failed:', res);
@@ -38,7 +34,7 @@ function Login() {
         <GoogleLogin
                     clientId={clientId}
                     buttonText="Sign In"
-                    onSuccess={onLoginSuccess}
+                    onSuccess={onLoginSuccessfully}
                     onFailure={onLoginFailure}
                     cookiePolicy={'single_host_origin'}
                     isSignedIn={true}
